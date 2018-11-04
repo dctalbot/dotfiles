@@ -22,13 +22,15 @@ pyServer() {
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 
-# Git branch in prompt.
+# Git branch in prompt
 # parse_git_branch() {
 #   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 # }
-
-
 # export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] λ "
+
+# check if previous command succeeded
+# `if [ $? = 0 ]; then echo "\[\033[01;32m\]✔"; else echo "\[\033[01;31m\]✘"; fi` 
+
 
 # use built in __git_ps1
 export PS1="\W\[\033[32m\]\$(__git_ps1 ' (%s)')\[\033[00m\] λ "
