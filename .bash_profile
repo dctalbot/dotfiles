@@ -23,11 +23,16 @@ pyServer() {
 
 
 # Git branch in prompt.
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
+# parse_git_branch() {
+#   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# }
 
-export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] λ "
+
+# export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] λ "
+
+# use built in __git_ps1
+export PS1="\W\[\033[32m\]\$(__git_ps1 ' (%s)')\[\033[00m\] λ "
+
 
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
@@ -41,4 +46,3 @@ export PS1="\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] λ "
 # export PATH="/anaconda3/bin:$PATH"
 export PATH=~/bin:$PATH
 export PATH="/usr/local/opt/node@8/bin:$PATH"
-
