@@ -1,0 +1,13 @@
+[user]
+	name = dctalbot
+	email = dctalbot@umich.edu
+[filter "lfs"]
+	smudge = git-lfs smudge %f
+	required = true
+	clean = git-lfs clean %f
+[credential]
+	helper = osxkeychain
+[alias]
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
+	push-this = push -u origin HEAD
+	cleanup = !"git checkout master && git pull && git branch -d $(git branch --merged=master | grep -v master) && get fetch --prune"
