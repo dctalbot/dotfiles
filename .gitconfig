@@ -11,3 +11,16 @@
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
 	push-this = push -u origin HEAD
 	cleanup = !"git checkout master && git pull && git branch -d $(git branch --merged=master | grep -v master) && get fetch --prune"
+  s = status
+	a = add
+	b = branch
+  c = commit
+  d = diff
+	ch = checkout
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
