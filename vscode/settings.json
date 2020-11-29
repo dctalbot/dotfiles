@@ -6,9 +6,9 @@
   "window.zoomLevel": 1,
   "editor.tabSize": 2,
   "prettier.eslintIntegration": true,
-  "editor.cursorBlinking": "smooth", //
-  "editor.cursorSmoothCaretAnimation": true, //
-  "editor.cursorStyle": "line", //
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.cursorStyle": "line",
   "flow.useNPMPackagedFlow": true,
   "javascript.validate.enable": false,
   "eslint.packageManager": "yarn",
