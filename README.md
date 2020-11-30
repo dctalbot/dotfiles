@@ -76,3 +76,6 @@ Some extenstions to Download:
 brew install nvm # version manager
 nvm install 12 # installs node@12
 ```
+
+# iterm
+Import settings and/or profile from `iterm/`. I think the only thing to customize is the Working Directory e.g. mine is `/Users/dctalbot`
