@@ -30,5 +30,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "[ruby]": {
     "editor.defaultFormatter": "misogi.ruby-rubocop"
-  }
+  },
+  "git.confirmSync": false
 }
