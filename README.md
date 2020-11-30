@@ -70,3 +70,9 @@ Some extenstions to Download:
 - Palenight Theme
 - Prettier
 - ES lint
+
+# node
+```sh
+brew install nvm # version manager
+nvm install 12 # installs node@12
+```
