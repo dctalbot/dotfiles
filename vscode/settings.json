@@ -31,5 +31,6 @@
   "[ruby]": {
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
-  "git.confirmSync": false
+  "git.confirmSync": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF"
 }
