@@ -1,28 +1,26 @@
-I just bought a new mac so I'm writing this as I go... enjoy!
+Here's a neat solution to keeping configs in sync across machines. It sounds like things are trending towards cloud-based configs, but if you consider github a cloud, that's basically what this is: one remote repo that multiples clients can pull from.
 
-# this could be you!
-![CLI Preview](https://github.com/dctalbot/dotfiles/blob/master/img/iterm.png?raw=true)
+The main idea is this:
+- have one centralized config repo
+- have each app reference its relevant config files from said repo via symlinks
+- changes made in the app should be reflected in the repo and vice-versa; it's a two-way street
+- all changes are tracked by git
+- this repo should not be deleted or else config chaos will ensue :)
 
+# terminal preview
+![Terminal Preview](https://github.com/dctalbot/dotfiles/blob/master/img/iterm.png?raw=true)
 
-# random notes
-- Nothing about this setup is super special, but I like being able to track my configuration in git since I work on multiple machines. That's why a lot of the commands below are just symlinking files in this repo to their respective locations on the filesystem.
-
-- It would be really easy for me to script out a bunch of this, but I sort of like having control of the granular chunks.
-
-- The bash stuff is basically legacy now that zsh is default on mac
 
 # downloads
 - [iTerm](http://iterm2.com)
 - [vscode](https://code.visualstudio.com/download)
 - [homebrew](https://brew.sh)
 - [oh-my-zsh](https://ohmyz.sh/#install)
-- xcode (optional)
-- android studio (optional)
 
 # brew
 
 ```sh
-brew install gpg
+brew install gpg go
 ```
 
 # git
@@ -57,7 +55,6 @@ compaudit | xargs chmod g-w,o-w
 ```
 
 # tmux
-I don't use tmux much these days, but I do have a config you can use just like the others
 ```sh
 ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
 ```
@@ -78,4 +75,4 @@ nvm install 12 # installs node@12
 ```
 
 # iterm
-Import settings and/or profile from `iterm/`. I think the only thing to customize is the Working Directory e.g. mine is `/Users/dctalbot`
+Import settings and/or profile from `iterm/`. I think the only thing custom is the Working Directory e.g. mine is `/Users/dctalbot`

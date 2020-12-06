@@ -3,7 +3,7 @@
   "atomKeymap.promptV3Features": true,
   "editor.multiCursorModifier": "ctrlCmd",
   "editor.formatOnPaste": true,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "editor.tabSize": 2,
   "prettier.eslintIntegration": true,
   "editor.cursorBlinking": "smooth",
@@ -32,5 +32,7 @@
     "editor.defaultFormatter": "misogi.ruby-rubocop"
   },
   "git.confirmSync": false,
-  "terminal.integrated.fontFamily": "MesloLGS NF"
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "window.titleBarStyle": "native",
+  "go.useLanguageServer": true
 }
