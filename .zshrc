@@ -112,3 +112,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # after brew install go
 export PATH=${PATH}:`go env GOPATH`/bin
+
+# brew install fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+alias f='fzf | xargs code'
