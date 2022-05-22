@@ -91,11 +91,11 @@ whizkydee.material-palenight-theme
 # node
 
 ```sh
-brew install nvm # version manager
+brew install nvm
 ```
 
 # python
 
 ```sh
-brew install pyenv # version manager
+brew install pyenv
 ```
