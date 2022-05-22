@@ -33,13 +33,15 @@ Last updated for macOS 12
 1. [Add an SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 1. `brew install gpg`
 1. [Add a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
-1. `git config --global user.signingkey <insert gpg key here>`
-1. `git config --global user.email <insert gpg email here>`
+
+<!-- for .gitconfig, it's easier to maintain 2 copies since the git config commands re-create files (so linking wouldn't work) -->
 
 ```sh
 mkdir ~/Developer && cd ~/Developer
 git clone git@github.com:dctalbot/dotfiles.git
-ln dotfiles/.gitconfig ~/.gitconfig
+cp dotfiles/.gitconfig ~
+git config --global user.signingkey <gpg key here>
+git config --global user.email <gpg email here>
 git config --global --list
 ```
 
