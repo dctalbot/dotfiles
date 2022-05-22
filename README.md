@@ -53,7 +53,7 @@ git config --global --list
 
 Potentially use the iTerm GUI to import `iterm/profile.json`. The only thing custom is the Working Directory attribute e.g. mine is `/Users/dctalbot`
 
-For [some reason](https://gitlab.com/gnachman/iterm2/-/issues/7477)
+For [some reason](https://gitlab.com/gnachman/iterm2/-/issues/7477), iterm wants access to Contacts. Block this under sys preferences > security & privacy > privacy > contacts
 
 # shell
 
