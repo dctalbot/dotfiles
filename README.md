@@ -4,10 +4,29 @@ This started out as some "hot tips" but has since evolved into more of a guide f
 
 Last updated for macOS 12
 
+# security & privacy
+
+1. Firewall > turn on (esp if you're working in cafes or airports etc.)
+1. `defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0` (turn off personalized apple ads)
+
+# keyboard
+
+1. Touch Bar Shows > Expanded Control Strip
+1. Modifier Keys... > Use Caps Lock as Escape
+
 # package manager
 
 1. Install [homebrew](https://brew.sh)
+
+# apps
+
 1. `brew install --cask spotify`
+
+# firefox developer edition
+
+1. `brew tap homebrew/cask-versions`
+1. `brew install --cask firefox-developer-edition`
+1. Change default browser in sys preferences
 
 # git
 
@@ -32,11 +51,7 @@ git config --global --list
 
 Potentially use the iTerm GUI to import `iterm/profile.json`. The only thing custom is the Working Directory attribute e.g. mine is `/Users/dctalbot`
 
-# browser
-
-1. `brew tap homebrew/cask-versions`
-1. `brew install --cask firefox-developer-edition`
-1. Change default browser in system preferences
+For [some reason](https://gitlab.com/gnachman/iterm2/-/issues/7477)
 
 # shell
 
