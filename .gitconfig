@@ -1,7 +1,5 @@
 [user]
 name = dctalbot
-email = dctalbot@umich.edu
-	signingkey = 85BC06EEE57DBACD
 [filter "lfs"]
 smudge = git-lfs smudge %f
 required = true
