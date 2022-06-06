@@ -1,5 +1,3 @@
-![Terminal Preview](https://github.com/dctalbot/dotfiles/blob/master/img/iterm.png?raw=true)
-
 This started out as some "hot tips" but has since evolved into more of a guide for myself that I run through whenever I get a new machine.
 
 How to keep configuration in sync:
@@ -53,7 +51,7 @@ compaudit | xargs chmod g-w,o-w
 # tmux
 
 ```sh
-ln -s "$(pwd)/.tmux.conf" ~/.tmux.conf
+ln .tmux.conf ~/.tmux.conf
 ```
 
 # vs code
