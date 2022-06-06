@@ -1,33 +1,57 @@
 This started out as some "hot tips" but has since evolved into more of a guide for myself that I run through whenever I get a new machine.
 
-How to keep configuration in sync:
+Last updated for macOS 12
 
-- have one git repo full of config files (e.g. named `dotfiles`)
-- link each app's config files to said repo (hard or soft links will do)
-- changes made in the app will then be reflected in the repo and vice-versa; it's a two-way street
-- all changes are tracked in the git repo
-- if you're using softlinks, don't delete or move the git repo or else chaos will ensue :) That is one pro of using hardlinks.
+# security & privacy
 
-# downloads
+1. Firewall > turn on (esp if you're working in cafes or airports etc.)
+1. `defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0` (turn off personalized apple ads)
 
-- [iTerm](http://iterm2.com)
-- [vscode](https://code.visualstudio.com/download)
-- [homebrew](https://brew.sh)
+# keyboard
+
+1. Touch Bar Shows > Expanded Control Strip
+1. Modifier Keys... > Use Caps Lock as Escape
+
+# package manager
+
+1. Install [homebrew](https://brew.sh)
+
+# apps
+
+1. `brew install --cask spotify`
+
+# firefox developer edition
+
+1. `brew tap homebrew/cask-versions`
+1. `brew install --cask firefox-developer-edition`
+1. Change default browser in sys preferences
 
 # git
 
-[Add an SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+1. [Add an SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+1. `brew install gpg`
+1. [Add a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
 
-[Add a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+<!-- for .gitconfig, it's easier to maintain 2 copies since the git config commands re-create files (so linking wouldn't work) -->
 
 ```sh
-mkdir ~/Developer && cd ~/Developer # has a cool little hammer icon in Finder :)
+mkdir ~/Developer && cd ~/Developer
 git clone git@github.com:dctalbot/dotfiles.git
-ln dotfiles/.gitconfig ~/.gitconfig # create global git config
-git config --global --list # confirm no errors
+cp dotfiles/.gitconfig ~
+git config --global user.signingkey <gpg key here>
+git config --global user.email <gpg email here>
+git config --global --list
 ```
 
-Now `dotfiles/.gitconfig` is linked to the global `~/.gitconfig`, so changes made in either one will be reflected in the other.
+# terminal
+
+1. `brew install --cask iterm2`
+1. `brew install tmux`
+1. `ln dotfiles/.tmux.conf ~/.tmux.conf`
+
+Potentially use the iTerm GUI to import `iterm/profile.json`. The only thing custom is the Working Directory attribute e.g. mine is `/Users/dctalbot`
+
+For [some reason](https://gitlab.com/gnachman/iterm2/-/issues/7477), iterm wants access to Contacts. Block this under sys preferences > security & privacy > privacy > contacts
 
 # shell
 
@@ -37,26 +61,19 @@ Now `dotfiles/.gitconfig` is linked to the global `~/.gitconfig`, so changes mad
 ```sh
 ln dotfiles/.zshrc ~/.zshrc # zsh config
 ln dotfiles/.zprofile ~/.zprofile # zsh config
-ln -s "$(pwd)/.p10k.zsh" ~/.p10k.zsh # p10k styles
-p10k configure # yes, install font, restart iterm
 ```
 
-You should see the pretty font now :)
 You may have to explicitly trust oh-my-zsh:
 
 ```sh
 compaudit | xargs chmod g-w,o-w
 ```
 
-# tmux
+# text editor
 
-```sh
-ln .tmux.conf ~/.tmux.conf
-```
-
-# vs code
-
-Used to do this manually, but there is now a [settings sync](https://code.visualstudio.com/docs/editor/settings-sync) feature!
+1. `brew install --cask visual-studio-code`
+1. Sign into [settings sync](https://code.visualstudio.com/docs/editor/settings-sync)
+1. Restart
 
 ```sh
 code --list-extensions
@@ -86,17 +103,11 @@ whizkydee.material-palenight-theme
 # node
 
 ```sh
-brew install nvm # version manager
+brew install nvm
 ```
 
 # python
 
 ```sh
-brew install pyenv # version manager
+brew install pyenv
 ```
-
-# iTerm
-
-Use the iTerm GUI to import `iterm/profile.json`. The only thing custom is the Working Directory attribute e.g. mine is `/Users/dctalbot`
-
-There is also a plist file that I used to track, but since they switched to using a binary format (instead of xml), it's too much of a pain to vet for breaking changes. It lives here: `~/Library/Preferences/com.googlecode.iterm2.plist`
