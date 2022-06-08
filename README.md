@@ -111,3 +111,11 @@ brew install nvm
 ```sh
 brew install pyenv
 ```
+
+# cron jobs
+
+## open calendar every 30 mins during workday
+
+```sh
+echo '0,30 9-17 * * 1-5 open -a Calendar' | crontab
+```
