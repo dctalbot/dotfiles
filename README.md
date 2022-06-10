@@ -117,5 +117,6 @@ brew install pyenv
 ## open calendar every 30 mins during workday
 
 ```sh
-echo '0,30 9-17 * * 1-5 open -a Calendar' | crontab
+alias cal-remind-on="echo '0,30 9-17 * * 1-5 open -a Calendar' | crontab"
+alias cal-remind-off="crontab -l | grep -v 'Calendar'  | crontab"
 ```
