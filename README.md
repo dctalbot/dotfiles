@@ -1,81 +1,53 @@
-This started out as some "hot tips" but has since evolved into more of a guide for myself that I run through whenever I get a new machine.
-
-Last updated for macOS 12
-
-# security & privacy
-
-1. Firewall > turn on (esp if you're working in cafes or airports etc.)
-1. `defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0` (turn off personalized apple ads)
-
-# keyboard
-
-1. Touch Bar Shows > Expanded Control Strip
-1. Modifier Keys... > Use Caps Lock as Escape
-
-# package manager
-
-1. Install [homebrew](https://brew.sh)
-
-# apps
-
-1. `brew install --cask spotify`
-
-# firefox developer edition
-
-1. `brew tap homebrew/cask-versions`
-1. `brew install --cask firefox-developer-edition`
-1. Change default browser in sys preferences
-
-# git
-
-1. [Add an SSH key](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
-1. `brew install gpg`
-1. [Add a GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
-
-<!-- for .gitconfig, it's easier to maintain 2 copies since the git config commands re-create files (so linking wouldn't work) -->
+Last updated for an Apple M4 Pro running Sequoia 15.1
 
 ```sh
+# system
+defaults write com.apple.AdLib allowApplePersonalizedAdvertising 0
+defaults write -g NSWindowShouldDragOnGesture -bool true
+defaults write com.apple.dock minimize-to-application -bool true
+defaults write com.apple.dock mineffect -string "scale"
+defaults write com.apple.spaces spans-displays -bool true
+killall Dock
+killall SystemUIServer
+
+
+# https://brew.sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo >> ~/.zprofile
+echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew analytics off
+
+# https://nikitabobko.github.io/AeroSpace/guide
+brew install --cask nikitabobko/tap/aerospace
+cp /Applications/AeroSpace.app/Contents/Resources/default-config.toml ~/.aerospace.toml
+
+# packages
+brew install nvm
+brew install pyenv
+brew install gpg
+
+# projects
 mkdir ~/Developer && cd ~/Developer
 git clone git@github.com:dctalbot/dotfiles.git
 cp dotfiles/.gitconfig ~
 git config --global user.signingkey <gpg key here>
 git config --global user.email <gpg email here>
 git config --global --list
-```
-
-# terminal
-
-1. `brew install --cask iterm2`
-1. `brew install tmux`
-1. `ln dotfiles/.tmux.conf ~/.tmux.conf`
-
-Potentially use the iTerm GUI to import `iterm/profile.json`. The only thing custom is the Working Directory attribute e.g. mine is `/Users/dctalbot`
-
-For [some reason](https://gitlab.com/gnachman/iterm2/-/issues/7477), iterm wants access to Contacts. Block this under sys preferences > security & privacy > privacy > contacts
 
 # shell
-
-- Install oh-my-zsh
-- Clone p10k oh-my-zsh installation https://github.com/romkatv/powerlevel10k#oh-my-zsh
-
-```sh
-ln dotfiles/.zshrc ~/.zshrc # zsh config
-ln dotfiles/.zprofile ~/.zprofile # zsh config
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-You may have to explicitly trust oh-my-zsh:
+## System Preferences
 
-```sh
-compaudit | xargs chmod g-w,o-w
-```
+1. Modifier Keys > use Caps Lock as Escape
 
-# text editor
+## VS Code
 
-1. `brew install --cask visual-studio-code`
-1. Sign into [settings sync](https://code.visualstudio.com/docs/editor/settings-sync)
-1. Restart
+1. Use [settings sync](https://code.visualstudio.com/docs/editor/settings-sync)
 
-```sh
+```console
 code --list-extensions
 
 dbaeumer.vscode-eslint
@@ -100,23 +72,6 @@ vayan.haml
 whizkydee.material-palenight-theme
 ```
 
-# node
-
-```sh
-brew install nvm
-```
-
-# python
-
-```sh
-brew install pyenv
-```
-
-# cron jobs
-
-## open calendar every 30 mins during workday
-
-```sh
-alias cal-remind-on="echo '0,30 9-17 * * 1-5 open -a Calendar' | crontab"
-alias cal-remind-off="crontab -l | grep -v 'Calendar'  | crontab"
+```console
+code --install-extension <name>
 ```
