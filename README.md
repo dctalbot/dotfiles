@@ -45,3 +45,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 ## System Preferences
 
 1. Modifier Keys > use Caps Lock as Escape
+
+## Using dotfiles as source of truth
+
+```
+ln -sf ~/Developer/dotfiles/.vscode/settings.json ~/Library/Application\ Support/Cursor/User/settings.json
+ln -sf ~/Developer/dotfiles/.gitconfig ~/.gitconfig
+# etc ...
+```
