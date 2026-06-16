@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "dsznajder.es7-react-js-snippets",
+    "eamodio.gitlens",
+    "esbenp.prettier-vscode",
+    "GitHub.copilot",
+    "golang.go",
+    "GraphQL.vscode-graphql",
+    "hediet.vscode-drawio",
+    "mechatroner.rainbow-csv",
+    "ms-azuretools.vscode-docker",
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "ms-toolsai.jupyter",
+    "ms-vscode-remote.remote-containers",
+    "redhat.vscode-yaml",
+    "svelte.svelte-vscode",
+    "tht13.html-preview-vscode",
+    "tommorris.mako",
+    "vayan.haml"
+  ]
+}
