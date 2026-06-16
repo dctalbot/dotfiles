@@ -1,122 +1,88 @@
 {
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4
+  },
+  "cursor.cpp.disabledLanguages": ["plaintext", "scminput", "python"],
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": true,
-  "editor.multiCursorModifier": "ctrlCmd",
-  "editor.formatOnPaste": true,
-  "editor.tabSize": 2,
-  "prettier.eslintIntegration": true,
-  "prettier.trailingComma": "all",
+  "editor.codeActionsOnSave": {},
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on",
   "editor.cursorStyle": "line",
-  "flow.useNPMPackagedFlow": true,
-  "javascript.validate.enable": false,
-  "ruby.format": "rubocop",
-  "workbench.startupEditor": "newUntitledFile",
-  "java.errors.incompleteClasspath.severity": "ignore",
-  "python.jediEnabled": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.largeFileOptimizations": false,
+  "editor.minimap.enabled": false,
+  "editor.multiCursorModifier": "ctrlCmd",
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.tabSize": 2,
+  "eslint.validate": ["javascript"],
+  "explorer.confirmDelete": false,
+  "flow.useNPMPackagedFlow": true,
+  "git.autofetch": true,
   "git.confirmSync": false,
-  "window.titleBarStyle": "native",
-  "go.useLanguageServer": true,
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "git.replaceTagsWhenPull": true,
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.enable": {
+    "*": true,
+    "markdown": true,
+    "plaintext": false,
+    "python": false,
+    "scminput": false,
+    "yaml": true
   },
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "github.copilot.nextEditSuggestions.enabled": true,
   "go.toolsManagement.autoUpdate": true,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  // "files.autoSave": "afterDelay",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.tabs.enabled": true,
-  "python.showStartPage": false,
-  "redhat.telemetry.enabled": false,
-  "jupyter.askForKernelRestart": false,
+  "go.useLanguageServer": true,
   "hediet.vscode-drawio.theme": "dark",
+  "java.errors.incompleteClasspath.severity": "ignore",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.validate.enable": false,
+  "jupyter.askForKernelRestart": false,
+  "makefile.configureOnOpen": false,
   "notebook.cellToolbarLocation": {
     "default": "right",
     "jupyter-notebook": "left"
   },
-  "security.workspace.trust.untrustedFiles": "open",
-  "python.languageServer": "Pylance",
-  "editor.formatOnSave": true,
-  "python.linting.enabled": true,
-  "editor.inlineSuggest.enabled": true,
-  "github.copilot.enable": {
-    "*": true,
-    "plaintext": false,
-    "markdown": true,
-    "scminput": false,
-    "yaml": true,
-    "python": false
-  },
-  "editor.largeFileOptimizations": false,
-  "search.exclude": {
-    "node_modules/**": true,
-    "**/.git": true,
-    "**/.svn": true,
-    "**/.hg": true,
-    "**/CVS": true,
-    "**/.DS_Store": true,
-    "**/Thumbs.db": true,
-    "**/node_modules": true,
-    "build": true,
-    ".env": false
-  },
-  "[python]": {
-    "editor.tabSize": 4,
-    "editor.insertSpaces": true,
-    "editor.formatOnSave": true,
-    "editor.formatOnPaste": false,
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnType": true
-  },
-  //   "python.linting.pylintEnabled": true
-  "editor.codeActionsOnSave": {
-    // "source.fixAll.eslint": "explicit"
-  },
-  "eslint.validate": ["javascript"],
-  "git.autofetch": true,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "[yaml]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "explorer.confirmDelete": false,
-  "terminal.integrated.defaultProfile.osx": "zsh",
-  "python.formatting.provider": "black",
-  "editor.minimap.enabled": false,
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "workbench.iconTheme": "vscode-icons",
-  "vsicons.dontShowNewVersionMessage": true,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "editor.accessibilitySupport": "off",
-  "github.copilot.editor.enableAutoCompletions": true,
-  "git.replaceTagsWhenPull": true,
   "python.analysis.typeCheckingMode": "basic",
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "makefile.configureOnOpen": false
+  "python.defaultInterpreterPath": "/usr/bin/python3",
+  "python.formatting.provider": "black",
+  "python.jediEnabled": false,
+  "python.languageServer": "None",
+  "python.linting.enabled": true,
+  "python.showStartPage": false,
+  "redhat.telemetry.enabled": false,
+  "ruby.format": "rubocop",
+  "search.exclude": {
+    ".env": false,
+    "**/.DS_Store": true,
+    "**/.git": true,
+    "**/.hg": true,
+    "**/.svn": true,
+    "**/CVS": true,
+    "**/node_modules": true,
+    "**/Thumbs.db": true,
+    "build": true,
+    "node_modules/**": true
+  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.tabs.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "window.titleBarStyle": "native",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "newUntitledFile"
 }
