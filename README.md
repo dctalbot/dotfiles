@@ -29,6 +29,7 @@ cp /Applications/AeroSpace.app/Contents/Resources/default-config.toml ~/.aerospa
 brew install nvm
 brew install uv
 brew install gpg
+brew install awscli
 
 # projects
 mkdir ~/Developer && cd ~/Developer
