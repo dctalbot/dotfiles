@@ -26,10 +26,14 @@ cp /Applications/AeroSpace.app/Contents/Resources/default-config.toml ~/.aerospa
 # enable System Preferences > Privacy & Security > Accessibility > AeroSpace.app
 
 # packages
+brew install gh
+brew install gpg
 brew install nvm
 brew install uv
-brew install gpg
 brew install awscli
+brew install colima
+brew install docker
+
 
 # projects
 mkdir ~/Developer && cd ~/Developer
